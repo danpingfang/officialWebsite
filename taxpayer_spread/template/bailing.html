@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+  <title>白领</title>
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/animate.min.css">
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <style>
+    .bg{
+      width: 100%;
+      height: 100%;
+      background: #faf9b6 url(../images/xiaohe_fuhao.png) no-repeat;
+      background-size: contain;
+      background-position: center bottom;
+      position: relative;
+    }
+    .person_icon{
+      width: 6.1rem;
+      height: 17.1rem;
+      position: absolute;
+      left: 2.25rem;
+      top: 8.5rem;
+      background: url(../images/icon_bailing.png) no-repeat;
+      background-size: contain;
+    }
+    .font{
+      width: 10rem;
+      height: 4.45rem;
+      position: absolute;
+      left: 1.5rem;
+      top: 3rem;
+      background: url(../images/font_bailing.png) no-repeat;
+      background-size: contain;
+    }
+    .icon_download{
+      width: 3.85rem;
+      height: 2.5rem;
+      position: absolute;
+      right: 2rem;
+      top: 11rem;
+      background: url(../images/fuhao_download_icon.png) no-repeat;
+      background-size: contain;
+      -webkit-animation-name: updown;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-delay: 1s;
+      -webkit-animation-timing-function: ease;
+      -webkit-animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+      animation-name: updown;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+    .eccode{
+      width: 5.5rem;
+      height: 6.25rem;
+      position: absolute;
+      right: 1.3rem;
+      top: 15rem;
+    }
+    .downloadBtn{
+      width: 4rem;
+      height: 1.2rem;
+      margin: 1rem auto;
+      border-radius: 2px;
+      color: #fff;
+      font-size: .8rem;
+      text-align: center;
+    }
+    .downloadBtn a{
+      color: #fff;
+      text-decoration: underline;
+    }
+    .eccode img{
+      display: block;
+      width: 100%;
+      /*height: 100%;*/
+    }
+    @-webkit-keyframes updown {
+        0% {-webkit-transform: translateY(0);}
+        100% {-webkit-transform: translateY(20px);}
+    }
+    @keyframes updown {
+        0% {-webkit-transform: translateY(0);}
+        100% {-webkit-transform: translateY(20px);}
+    }
+  </style>
+</head>
+<body>
+  <section class="bg">
+    <div class="font animated fadeInDownBig"></div>
+    <div class="person_icon animated fadeInLeft"></div>
+    <div class="eccode  animated fadeInRight"><img src="../images/eccode_taxpayer.png" alt=""><div class="downloadBtn"><a href="http://huodong.zs5s.com/yxr">点击下载</a></div> </div>
+    <div class="icon_download animated fadeInRight"></div>
+  </section>
+</body>
+<script src="../js/base.js"></script>
+<script>
+  $('.font').addClass('fadeInDownBig' + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+    $(this).removeClass('fadeInDownBig').addClass('tada');
+  });
+</script>
+</html>

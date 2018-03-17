@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+  <meta name="description" content="输入你的期望薪资，在穷人与富人之间转化角色。"> 
+  <!--页面进入的动画-->
+  <meta http-equiv="Page-Enter" content= "revealTrans(Duration=5.0,Transition=10)" >
+  <title>宝贝儿，我是你期望的有xin人</title>
+  <!--<link rel="shortcut icon" href="http://huodong.zs5s.com/favicon32x32.ico" />-->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/animate.min.css">
+  <!--<link rel="stylesheet" href="css/mui.min.css">-->
+  <!--<script src="js/mui.min.js"></script>-->
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <style>
+    .bg{
+      width: 100%;
+      height: 100%;
+      background: #fce4c1 url(images/xiaohe.png) no-repeat;
+      background-size: contain;
+      background-position: center bottom;
+      position: relative;
+    }
+    .person{
+      width: 100%;
+      height: 11.7rem;
+      background: url(images/person.png) no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 11.25rem;
+      z-index: 10;
+    }
+    .speak{
+      width: 100%;
+      height: 20.1rem;
+      position: absolute;
+      top: 0;
+      background: url(images/speak.png) no-repeat;
+      background-size: contain;
+      z-index: 20;
+    }
+    .font{
+      width: 5.75rem;
+      height: 5.35rem;
+      position: absolute;
+      left: 1rem;
+      top: 10.2rem;
+      background: url(images/font.png) no-repeat;
+      background-size: contain;
+      z-index: 30;
+      -webkit-animation-name: bounce;
+      -webkit-animation-duration: 3s;
+      -webkit-animation-delay: 1s;
+      -webkit-animation-timing-function: ease;
+      -webkit-animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+      animation-name: bounce;
+      animation-duration: 3s;
+      animation-delay: .2s;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+    @-webkit-keyframes bounce {
+        0% {-webkit-transform: rotateY(0);}
+        40% {-webkit-transform: rotateY(0);}
+        50% {-webkit-transform: rotateY(0);}
+        60% {-webkit-transform: rotateY(180deg);}
+        70% {-webkit-transform: rotateY(0);}
+        80% {-webkit-transform: rotateY(0);}
+        100% {-webkit-transform: rotateY(0);}
+        
+    }
+    @keyframes bounce {
+        0% {-webkit-transform: rotateY(0);}
+        40% {-webkit-transform: rotateY(0);}
+        50% {-webkit-transform: rotateY(0);}
+        60% {-webkit-transform: rotateY(180deg);}
+        70% {-webkit-transform: rotateY(0);}
+        80% {-webkit-transform: rotateY(0);}
+        100% {-webkit-transform: rotateY(0);}   
+    }
+    .inputBox{
+      width: 8rem;
+      height: 2rem;
+      background: #f3b939;
+      border: 1px solid #e0a012;
+      border-radius: 2px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top:23.5rem;
+      text-align: left;
+      line-height: 2rem;
+      color: #fff;
+      font-size: .8rem;
+      z-index: 99;
+    }
+    .btn{
+      width: 4rem;
+      height: 2rem;
+      background: #f3b939;
+      border: 1px solid #e0a012;
+      border-radius: 2px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 26.5rem;
+      text-align: center;
+      line-height: 2rem;
+      color:#fff;
+      font-size: .8rem;
+      font-weight: bold;
+      z-index: 99;
+    }
+    .inputBox input{
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-indent: .5em;
+    }
+    /*.title{
+      color: #d31277;
+    }*/
+  </style>
+</head>
+<body>
+  <div margin-top="-10000px" margin-left="-10000px"><img height="0" width="0" src="http://huodong.zs5s.com/images/logo.jpg" alt=""></div>
+  
+  <section class="bg">
+    <div class="person"></div>
+    <div class="speak"></div>
+    <div class="font"></div>
+    <div class="inputBox"><input id="money" type="number" placeholder="请输入您的税前工资"></div>
+    <div class="btn">提交</div>
+    <!--<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">-->
+	    <!-- 可选择菜单 -->
+	    <!--<ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+	        <h4 class="title">请选择您的工资（元）</h4>
+	      </li>
+	      <li class="mui-table-view-cell">
+	        <a href="template/xuesheng.html">0 - 1500</a>
+	      </li>
+	      <li class="mui-table-view-cell">
+	        <a href="template/nongmin.html">1500 - 4500</a>
+	      </li>
+        <li class="mui-table-view-cell">
+	        <a href="template/lanling.html">4500 - 9000</a>
+	      </li>
+        <li class="mui-table-view-cell">
+	        <a href="template/bailing.html">9000 - 35000</a>
+	      </li>
+        <li class="mui-table-view-cell">
+	        <a href="template/jinling.html">35000 - 55000</a>
+	      </li>
+        <li class="mui-table-view-cell">
+	        <a href="template/fuhao.html">55000 - 80000</a>
+	      </li>
+        <li class="mui-table-view-cell">
+	        <a href="template/tuhao.html">80000以上</a>
+	      </li>
+	    </ul>-->
+	    <!-- 取消菜单 -->
+	    <!--<ul class="mui-table-view">
+	      <li class="mui-table-view-cell">
+	        <a href="#sheet1"><b>取消</b></a>
+	      </li>
+	    </ul>
+	</div>-->
+  </section>
+</body>
+<script src="js/base.js"></script>
+<script>
+  $(function(){
+    // $('.person').addClass('animated zoomInDown');
+    $('.speak').css("display",'none');
+    $('.font').css("display",'none');
+    $('.person').addClass('animated zoomInDown').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $('.speak').css("display",'block').addClass('animated fadeIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $(this).removeClass('fadeIn').addClass('animated bounceIn');
+        $('.font').css("display",'block').addClass('animated bounce').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+          // $(this).removeClass('fadeIn').addClass('bounceIn');
+        });
+      });
+    });
+ 
+  //   // 跳转结果页面
+  //  $('.btn').on('click',function(){
+  //     mui('#sheet1').popover('toggle');
+  //  }) 
+
+  //跳转
+  function getUrlPath(money){
+    var url = "";
+    if(money <= 1500 && money > 0){
+      url = "template/xuesheng.html?number="+money;
+    }else if(money > 1500 && money <= 4500){
+      url = "template/nongmin.html?number="+money;
+    }else if(money > 4500 && money <= 9000){
+      url = "template/lanling.html?number="+money;
+    }else if(money > 9000 && money <= 35000){
+      url = "template/bailing.html?number="+money;
+    }else if(money > 35000 && money <= 55000){
+      url = "template/jinling.html?number="+money;
+    }else if(money > 55000 && money <= 80000){
+      url = "template/fuhao.html?number="+money;
+    }else if(money >= 80000){
+      url = "template/tuhao.html?number="+money;
+    }else{
+      alert("请重新输入");
+    }
+    return url;
+  }
+$("#money").val('');
+var subBtn = document.querySelector(".btn");
+subBtn.onclick = function(){
+  var money = $("#money").val();
+  var url = getUrlPath(money);
+  if( !url ){
+    $("#money").val('');
+    return false;
+  }
+  window.location.href = url;
+  $("#money").blur();
+}
+
+});  
+</script>
+</html>
